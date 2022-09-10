@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+
+<body>
+    <h1 onclick="alert('heading')">This is a heading</h1>
+
+    <!-- //directly adding event to any element -->
+    <button onclick="document.body.style.backgroundColor = 'red';">click me: red</button>
+
+    <!-- //adding event by calling function -->
+    <button onclick="makeRed()">click me : yellow</button>
+
+    <!-- //adding  event by assigning function -->
+    <button id="blue-button">click me:blue</button>
+    <!-- //adding event by anonymous function -->
+    <button id="green-button">click me:green</button>
+
+    <!-- //adding event by addEventListner -->
+    <button id="goldrod-button">click me:goldrod</button>
+    <!-- //directly assingn function to addEventListner -->
+    <button id="light-blue-button">click me:lightblue</button>
+    <!-- //direct shortcut -->
+    <button id="hot-pink-button">click me:hot pink</button>
+</body>
+<script src="event.js">
+
+</script>
+
+</html>

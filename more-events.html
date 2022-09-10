@@ -1,0 +1,62 @@
+<!-- v-25.6 different types of events -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>More events</h2>
+    <h3 id="secret-text">very very secret information</h3>
+    <input id="delete-field" type="text" placeholder="please type delete">
+    <button id="delete-btn" disabled>Delete</button>
+</body>
+<script>
+    const deleteBtn = document.getElementById('delete-btn');
+
+    //click event
+    deleteBtn.addEventListener('click', function () {
+        document.getElementById('secret-text').style.display = 'none';
+    })
+
+    //focus event
+    const deleteField = document.getElementById('delete-field');
+    deleteField.addEventListener('focus', function () {
+        document.body.style.backgroundColor = 'lightcoral';
+    })
+
+    //blur event
+    deleteField.addEventListener('blur', function () {
+        document.body.style.backgroundColor = 'white';
+    })
+
+    /*  //keydown event
+     deleteField.addEventListener('keydown', function () {
+         console.log(deleteField.value);
+     }) */
+
+
+    //keypress event
+    /*   deleteField.addEventListener('keypress', function () {
+          console.log(deleteField.value);
+      }) */
+
+
+    //keyup event
+    deleteField.addEventListener('keyup', function (event) {
+        //by using event.target.value we can get value of deleteField when keyup event occurs on it
+        if (event.target.value == 'delete') {
+            //removing attribute by removeAttribute of any element
+            deleteBtn.removeAttribute('disabled');
+        } else {
+            deleteBtn.setAttribute('disabled', 'true');
+        }
+    })
+
+</script>
+
+</html>

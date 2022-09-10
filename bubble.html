@@ -1,0 +1,61 @@
+<!-- v-25.7 event bubble and stop propagation -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Event handler</h2>
+    <section id="section-container">
+        <h4>babul vai list</h4>
+        <ul id="item-container">
+            <li id="item-1">Lorem, ipsum.</li>
+            <li id="item-2">Eligendi, nobis.</li>
+            <li id="item-3">Blanditiis, doloribus!</li>
+            <li id="item-4">Rem, nihil.</li>
+            <li id="item-5">Cupiditate, suscipit.</li>
+            <li id="item-6">Voluptatibus, architecto.</li>
+            <li id="item-7">Sequi, velit.</li>
+            <li id="item-8">Explicabo, voluptas.</li>
+        </ul>
+    </section>
+</body>
+<script>
+    document.getElementById('item-2').addEventListener('click', function (event) {
+        console.log('item 2 clicked');
+        // event.stopPropagation() is used to stop progation of bubble phase to parent elements
+        event.stopPropagation();
+
+        //event.stopImmediatePropagation() is used to stop progation of bubble phase to itself
+        event.stopImmediatePropagation();
+    })
+    //adding other click handler event on item-2 
+    document.getElementById('item-2').addEventListener('click', function () {
+        console.log('item 2.1 clicked');
+    })
+    document.getElementById('item-2').addEventListener('click', function () {
+        console.log('item 2.2 clicked');
+    })
+    document.getElementById('item-2').addEventListener('click', function () {
+        console.log('item 2.3 clicked');
+    })
+
+    //adding handler to ul
+    document.getElementById('item-container').addEventListener('click', function () {
+        console.log('list container clicked');
+    })
+
+    //adding handler to section
+    document.getElementById('section-container').addEventListener('click', function () {
+        console.log('section container clicked');
+    })
+
+
+</script>
+
+</html>

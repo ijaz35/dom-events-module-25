@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>My comments!!!!</h2>
+    <section>
+        <h3>Read the comments</h3>
+        <div id="comment-container">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolorum ullam sed? Est exercitationem
+                excepturi iure tempore facere minus? Omnis autem repellendus a dicta corporis nihil quo incidunt
+                excepturi error!</p>
+            <p>Quia vitae, soluta quasi deserunt tenetur laudantium molestiae a, totam quibusdam reprehenderit dolores
+                vero incidunt sunt culpa cumque tempora voluptatum ullam numquam eveniet doloribus molestias iste
+                maiores saepe corrupti. Id!</p>
+            <p>Eius dignissimos tenetur dolorem ullam incidunt nemo voluptates molestias nisi officia, accusamus
+                mollitia minima officiis, nihil sint quidem alias! Ipsam totam laboriosam accusantium velit suscipit est
+                vitae optio laudantium corrupti.</p>
+
+        </div>
+        <div>
+            <textarea name="" id="comment-box" cols="60" rows="4"></textarea>
+            <br>
+            <button id="submit-btn">Post</button>
+        </div>
+    </section>
+    <script>
+        //get the submit btn from the dom
+        const postButton = document.getElementById('submit-btn');
+        //add event handler to the btn
+        postButton.addEventListener('click', function () {
+            //get the textarea element
+            const commentBox = document.getElementById('comment-box');
+            //create new paragraph element
+            const newComment = document.createElement('p');
+            //set paragraph inner html to comment box value
+            newComment.innerHTML = commentBox.value;
+            //get hte parent
+            const commentContainer = document.getElementById('comment-container');
+            //add new paragraph to parent as child
+            commentContainer.appendChild(newComment);
+            //setting textarea value empty
+            commentBox.value = '';
+        })
+    </script>
+</body>
+
+</html>
